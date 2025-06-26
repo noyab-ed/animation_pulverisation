@@ -7,35 +7,24 @@
     body {
       margin: 0;
       background-color: #000;
-      color: white;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      font-family: sans-serif;
     }
 
     video {
       max-width: 90vw;
-      max-height: 70vh;
+      max-height: 90vh;
       border: 2px solid #fff;
-      margin-bottom: 1em;
-    }
-
-    p {
-      font-size: 1rem;
+      box-shadow: 0 0 20px #222;
     }
   </style>
 </head>
 <body>
-
-  <video autoplay loop muted playsinline controls>
-  <source src="schema_pulve_OK.webm" type="video/webm">
-  Votre navigateur ne supporte pas la vidéo WebM.
-</video>
-
-  <p>Si la vidéo ne démarre pas, cliquez sur ▶ pour lancer manuellement.</p>
-
+  <video autoplay loop muted playsinline>
+    <source src="Schema_Pulve.webm" type="video/webm">
+    Votre navigateur ne supporte pas la vidéo WebM.
+  </video>
 </body>
 </html>
