@@ -7,46 +7,35 @@
     body {
       margin: 0;
       background-color: #000;
+      color: white;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      font-family: sans-serif;
     }
 
     video {
       max-width: 90vw;
-      max-height: 90vh;
+      max-height: 70vh;
       border: 2px solid #fff;
-      box-shadow: 0 0 20px #222;
+      margin-bottom: 1em;
+    }
+
+    p {
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <video id="video" autoplay muted loop playsinline>
+
+  <video id="video" muted loop controls playsinline>
     <source src="schema_pulve.webm" type="video/webm">
     Votre navigateur ne supporte pas la vidéo WebM.
   </video>
 
-  <script>
-    // Force la lecture automatique même si le navigateur a bloqué l’autoplay
-    window.addEventListener('DOMContentLoaded', function () {
-      var vid = document.getElementById('video');
-      var playPromise = vid.play();
+  <p>Si la vidéo ne démarre pas, cliquez sur ▶ pour lancer manuellement.</p>
 
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            // La lecture a démarré correctement
-          })
-          .catch((error) => {
-            // Le navigateur a bloqué autoplay : on lance manuellement au clic
-            vid.setAttribute('controls', 'true');
-            vid.addEventListener('click', () => {
-              vid.play();
-            });
-          });
-      }
-    });
-  </script>
 </body>
 </html>
