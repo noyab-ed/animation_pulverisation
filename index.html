@@ -22,9 +22,31 @@
   </style>
 </head>
 <body>
-  <video autoplay loop muted playsinline>
+  <video id="video" autoplay muted loop playsinline>
     <source src="Schema_Pulve.webm" type="video/webm">
     Votre navigateur ne supporte pas la vidéo WebM.
   </video>
+
+  <script>
+    // Force la lecture automatique même si le navigateur a bloqué l’autoplay
+    window.addEventListener('DOMContentLoaded', function () {
+      var vid = document.getElementById('video');
+      var playPromise = vid.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // La lecture a démarré correctement
+          })
+          .catch((error) => {
+            // Le navigateur a bloqué autoplay : on lance manuellement au clic
+            vid.setAttribute('controls', 'true');
+            vid.addEventListener('click', () => {
+              vid.play();
+            });
+          });
+      }
+    });
+  </script>
 </body>
 </html>
