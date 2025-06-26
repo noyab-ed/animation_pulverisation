@@ -2,28 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Animation pulvérisation</title>
+  <title>Animation de pulvérisation</title>
   <style>
     body {
-      background-color: #000;
       margin: 0;
-      padding: 0;
+      background-color: #000;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
     }
+
     video {
       max-width: 90vw;
       max-height: 90vh;
-      border: 2px solid white;
+      border: 2px solid #fff;
+      box-shadow: 0 0 20px #222;
     }
   </style>
 </head>
 <body>
-  <video autoplay controls loop>
-    <source src="schema_pulve.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
+  <video autoplay loop controls muted playsinline>
+    <source src="schema_pulve.webm" type="video/webm">
+    Votre navigateur ne supporte pas la vidéo WebM.
   </video>
 </body>
 </html>
